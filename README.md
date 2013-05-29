@@ -2,7 +2,7 @@
 
 iOS web app built off of H5BP mobile. Beer Count will help me count the number of beers I drink at social gathering.
 
-* git source:
+* git source: [git@github.com:frankyonnetti/beercount.git](git@github.com:frankyonnetti/beercount.git)
 * Homepage: [http://frank.yonnetti.com/beercount](http://frank.yonnetti.com/beercount)
 
 ---
