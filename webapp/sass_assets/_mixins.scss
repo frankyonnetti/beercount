@@ -1,0 +1,78 @@
+//
+// Custom sass mixins
+//
+
+// element-invisible as defined by http://snook.ca/archives/html_and_css/hiding-content-for-accessibility
+@mixin element-invisible {
+  position: absolute !important;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  @if $legacy-support-for-ie6 or $legacy-support-for-ie7 {
+    clip: rect(1px 1px 1px 1px); // IE6 and IE7 use the wrong syntax.
+  }
+  clip: rect(1px, 1px, 1px, 1px);
+}
+
+// Turns off the element-invisible effect.
+@mixin element-invisible-off {
+  position: static !important;
+  clip: auto;
+  height: auto;
+  width: auto;
+  overflow: auto;
+}
+
+@mixin element-focusable {
+  @include element-invisible;
+
+  &:active,
+  &:focus {
+    @include element-invisible-off;
+  }
+}
+
+// IE7 inline-block
+@mixin ie7-inline-block() {
+  *display: inline; /* IE7 inline-block hack */
+  *zoom: 1;
+}
+
+// Gradient
+@mixin gradient($from, $to) { //vertical
+	background-color: $from;
+	background-image: -moz-linear-gradient(top, $from, $to); // FF 3.6+
+	background-image: -webkit-gradient(linear, 0 0, 0 100%, from($from), to($to)); // Safari 4+, Chrome 2+
+	background-image: -webkit-linear-gradient(top, $from, $to); // Safari 5.1+, Chrome 10+
+	background-image: -o-linear-gradient(top, $from, $to); // Opera 11.10
+	background-image: linear-gradient(to bottom, $from, $to); // Standard, IE10
+	background-repeat: repeat-x;
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='$from', endColorstr='$to', GradientType=0); // IE9 and down
+}
+
+@mixin gradient_h($from, $to) { //horizontal
+	background-color: $from;
+	background-image: -moz-linear-gradient(left, $from, $to); // FF 3.6+
+	background-image: -webkit-gradient(linear, 0 0, 100% 0, from($from), to($to)); // Safari 4+, Chrome 2+
+	background-image: -webkit-linear-gradient(left, $from, $to); // Safari 5.1+, Chrome 10+
+	background-image: -o-linear-gradient(left, $from, $to); // Opera 11.10
+	background-image: linear-gradient(to right, $from, $to); // Standard, IE10
+	background-repeat: repeat-x;
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='$from', endColorstr='$to', GradientType=1); // IE9 and down
+}
+
+// Easy retina-ready images
+// http://37signals.com/svn/posts/3271-easy-retina-ready-images-using-scss
+@mixin image-2x($image, $width, $height) {
+  @media (-webkit-min-device-pixel-ratio: 2),
+         (min--moz-device-pixel-ratio: 2),
+         (-o-min-device-pixel-ratio: 2/1),
+         (min-device-pixel-ratio: 2),
+         (min-resolution: 192dpi),
+         (min-resolution: 2dppx) {
+    /* on retina, use image that's scaled by 2 */
+    background-image: url($image);
+    background-size: $width $height;
+  }
+}
+

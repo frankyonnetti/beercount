@@ -1,0 +1,370 @@
+@import "base";
+
+/*
+ * HTML5 Boilerplate
+ *
+ * What follows is the result of much research on cross-browser styling.
+ * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
+ * Kroc Camen, and the H5BP dev community and team.
+ */
+
+/* ==========================================================================
+   Base styles: opinionated defaults
+   ========================================================================== */
+
+html,
+button,
+input,
+select,
+textarea {
+  color: #333;
+}
+
+body {
+  font-size: 1em;
+  line-height: 1.4;
+  font-family: $base-font-family;
+  text-align: center;
+  background-color: #c26a1c;
+
+  &.iphone-webapp {
+    background: url(../img/global/suds.png) repeat-x center top;
+    @include image-2x("../img/global/suds_2x.png", 640px, 170px);
+  }
+
+  &.iphone-safari {
+    text-align: center;
+    background: url(../img/global/install-webapp-bg.png) no-repeat center top;
+    @include image-2x("../img/global/install-webapp-bg_2x.png", 320px, 385px);
+  }
+
+  &.other-browser {
+    text-align: center;
+    background: url(../img/global/sudsweb.png) repeat-x center top;
+    @include image-2x("../img/global/sudsweb_2x.png", 640px, 170px);
+  }
+}
+
+a {
+  color: #00e;
+}
+
+a:visited {
+  color: #551a8b;
+}
+
+a:hover {
+  color: #06e;
+}
+
+/*
+ * Remove the gap between images and the bottom of their containers: h5bp.com/i/440
+ */
+
+img {
+  vertical-align: middle;
+}
+
+/*
+ * Remove default fieldset styles.
+ */
+
+fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+/*
+ * Allow only vertical resizing of textareas.
+ */
+
+textarea {
+  resize: vertical;
+}
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+
+#beerCount {
+  font-size: 124px;
+  line-height: 124px;
+  letter-spacing: -10px;
+  font-weight: bold;
+  margin: 0;
+  padding: 27px 10px 34px 0;
+  //@include transition(all 0.3s ease-out);
+}
+
+.addition-btn {
+  width: 240px;
+  height: 146px;
+  margin: 0 auto;
+
+  #add {
+    text-indent: -1000000px;
+    background: rgba(243,236,223,0.9) url(../img/global/icon-add.png) no-repeat center 0;
+    @include image-2x("../img/global/icon-add_2x.png", 64px, 256px);
+    @include border-radius(2px);
+    display: block;
+    width: 240px;
+    height: 128px;
+    @include transition(background-color 0.2s ease-in);
+
+    &:active {
+      background-color: rgba(243,236,223,0.5);
+    }
+  }
+}
+
+.other-btns {
+  width: 240px;
+  height: 72px;
+  margin: 0 auto;
+
+  #sub,
+  #reset {
+    text-indent: -1000000px;
+    background: rgba(159,77,4,0.7) no-repeat center 0;
+    display: block;
+    width: 120px;
+    height: 72px;
+    float: left;
+
+    &:active {
+      background-color: rgba(159,77,4,0.4);
+    }
+  }
+
+  #sub {
+    background-image: url(../img/global/icon-sub.png);
+    @include image-2x("../img/global/icon-sub_2x.png", 54px, 72px);
+    @include border-radius(2px 0 0 2px);
+  }
+
+  #reset {
+    background-image: url(../img/global/icon-refresh.png);
+    @include image-2x("../img/global/icon-refresh_2x.png", 68px, 72px);
+    @include border-radius(0 2px 2px 0);
+  }
+}
+
+#comment {
+  color: #f5eddf;
+  font-family: $helvetica-neue-medium;
+  font-size: 17px;
+  line-height: 20px;
+  text-shadow: 0 -1px 0 rgba(0,0,0,0.17);
+  width: 210px;
+  margin: 0 auto;
+  padding-top: 18px;
+}
+
+.install-copy {
+  color: #f5eddf;
+  font-family: $helvetica-neue-medium;
+  font-size: 17px;
+  line-height: 20px;
+  text-shadow: 0 -1px 0 rgba(0,0,0,0.17);
+  padding-top: 320px;
+
+  .action-icon {
+    text-indent: -1000000px;
+    background: transparent url(../img/global/icon-action.png) no-repeat 0 0;
+    @include image-2x("../img/global/icon-action_2x.png", 23px, 19px);
+    display: inline-block;
+    width: 23px;
+    height: 19px;
+  }
+}
+
+.logo {
+  text-indent: -1000000px;
+  background: transparent url(../img/global/install-webapp-bg.png) no-repeat center 88px;
+  @include image-2x("../img/global/install-webapp-bg_2x.png", 320px, 385px);
+  width: 320px;
+  height: 350px;
+  margin: 0 auto;
+  padding-top: 88px;
+}
+
+.website-intro {
+  color: #f5eddf;
+  font-family: $helvetica-neue;
+  font-size: 17px;
+  line-height: 20px;
+  text-shadow: 0 -1px 0 rgba(0,0,0,0.17);
+}
+
+
+/* ==========================================================================
+   Helper classes
+   ========================================================================== */
+
+/* Prevent callout */
+
+.nocallout {
+  -webkit-touch-callout: none;
+}
+
+.pressed {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+/* A hack for HTML5 contenteditable attribute on mobile */
+
+textarea[contenteditable] {
+  -webkit-appearance: none;
+}
+
+/* A workaround for S60 3.x and 5.0 devices which do not animated gif images if
+   they have been set as display: none */
+
+.gifhidden {
+  position: absolute;
+  left: -100%;
+}
+
+/*
+ * Image replacement
+ */
+
+.ir {
+  background-color: transparent;
+  background-repeat: no-repeat;
+  border: 0;
+  direction: ltr;
+  display: block;
+  overflow: hidden;
+  text-align: left;
+  text-indent: -999em;
+}
+
+.ir br {
+  display: none;
+}
+
+/*
+ * Hide from both screenreaders and browsers: h5bp.com/u
+ */
+
+.hidden {
+  display: none !important;
+  visibility: hidden;
+}
+
+/*
+ * Hide only visually, but have it available for screenreaders: h5bp.com/v
+ */
+
+.visuallyhidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+/*
+ * Extends the .visuallyhidden class to allow the element to be focusable
+ * when navigated to via the keyboard: h5bp.com/p
+ */
+
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus {
+  clip: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  position: static;
+  width: auto;
+}
+
+/*
+ * Hide visually and from screenreaders, but maintain layout
+ */
+
+.invisible {
+  visibility: hidden;
+}
+
+/**
+ * Clearfix helper
+ * Used to contain floats: h5bp.com/q
+ */
+
+.clearfix:before,
+.clearfix:after {
+  content: "";
+  display: table;
+}
+
+.clearfix:after {
+  clear: both;
+}
+
+/* ==========================================================================
+   EXAMPLE Media Queries for Responsive Design.
+   Theses examples override the primary ('mobile first') styles.
+   Modify as content requires.
+   ========================================================================== */
+
+@media only screen and (min-width: 800px) {
+  /* Style adjustments for viewports that meet the condition */
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5),
+       only screen and (min-resolution: 144dpi) {
+  /* Style adjustments for viewports that meet the condition */
+}
+
+//iPhone 5
+@media only screen and (max-device-height: 568px) and (orientation:portrait) {
+
+  body.iphone-webapp {
+    background-position: center top;
+  }
+
+  #beerCount {
+    padding-top: 27px;
+    padding-bottom: 57px;
+  }
+
+}
+
+//iPhone 4
+@media only screen and (max-device-height: 480px) and (orientation:portrait) {
+
+  body.iphone-webapp {
+    background-position: center -25px;
+  }
+
+  body.iphone-safari {
+    background-position: center -5px;
+    background-size: 84% auto;
+
+    .install-copy {
+      line-height: 18px;
+      padding-top: 248px;
+    }
+  }
+
+  #beerCount {
+    padding-top: 6px;
+    padding-bottom: 34px;
+  }
+
+}
+
+@media only screen and (max-device-width: 568px) and (orientation:landscape) {
+
+  body {
+    //-webkit-transform: rotate(90deg);
+    display: none;
+  }
+
+}
