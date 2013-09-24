@@ -7,7 +7,7 @@
 project_type = :stand_alone
 
 # The environment mode. Defaults to :production, can also be :development
-environment = :development
+environment = :production
 
 # In development, we can turn on the FireSass-compatible debug_info.
 firesass = false

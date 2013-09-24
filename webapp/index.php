@@ -5,9 +5,9 @@
         <meta charset="utf-8">
         <title>Beer Count</title>
         <meta name="description" content="">
-        <meta name="HandheldFriendly" content="True">
-        <meta name="MobileOptimized" content="320">
-        <meta name="viewport" content="initial-scale=1, user-scalable=no">
+        <meta name="MobileOptimized" content="width">
+        <meta name="HandheldFriendly" content="true">
+        <meta name="viewport" content="initial-scale=1.0,width=device-width,user-scalable=yes">
         <meta http-equiv="cleartype" content="on">
 
         <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
@@ -30,7 +30,7 @@
         <script>(function(a,b,c){if(c in b&&b[c]){var d,e=a.location,f=/^(a|html)$/i;a.addEventListener("click",function(a){d=a.target;while(!f.test(d.nodeName))d=d.parentNode;"href"in d&&(d.href.indexOf("http")||~d.href.indexOf(e.host))&&(a.preventDefault(),e.href=d.href)},!1)}})(document,window.navigator,"standalone")</script>
 
         <link rel="stylesheet" href="css/normalize.css">
-        <link rel="stylesheet" href="css/main.css?a">
+        <link rel="stylesheet" href="css/main.css">
         <link rel="stylesheet" href="css/carbon.css">
         <script src="js/vendor/modernizr-2.6.2.min.js"></script>
     </head>
@@ -57,7 +57,7 @@
           <p class="install-copy">Before using Beer Count,<br>
           add it to your "Home Screen"<br>
           by tapping the share<br>
-          icon <span class="action-icon">action-icon</span> below.</p>
+          icon below.</p>
 
           <?php else: ?>
 
@@ -107,7 +107,7 @@
 
         </div><!-- /#page -->
 
-        <script src="js/vendor/jquery-2.0.0.min.js"></script>
+        <script src="js/vendor/jquery-2.0.3.min.js"></script>
         <script src="js/helper.js"></script>
         <script src="js/main.js"></script>
         <script src="js/plugins.js"></script>
