@@ -27,6 +27,7 @@
   'use strict';
 
   MBP.scaleFix();
+  MBP.hideUrlBarOnLoad();
   MBP.startupImage();
   MBP.enableActive();
   MBP.preventScrolling();

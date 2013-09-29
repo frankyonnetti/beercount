@@ -28,8 +28,13 @@ body {
   background-color: #c26a1c;
 
   &.iphone-webapp {
-    background: url(../img/global/suds.png) repeat-x center top;
-    @include image-2x("../img/global/suds_2x.png", 640px, 170px);
+    background-color: #111;
+
+    #page {
+      background: #c26a1c url(../img/global/suds.png) repeat-x center top;
+      @include image-2x("../img/global/suds_2x.png", 640px, 170px);
+      margin-top: 20px;
+    }
   }
 
   &.iphone-safari {
@@ -87,29 +92,35 @@ textarea {
    Author's custom styles
    ========================================================================== */
 
+#page-inner {
+  position: relative;
+  z-index: 2;
+}
+
 #beerCount {
   font-size: 124px;
   line-height: 124px;
   letter-spacing: -10px;
   font-weight: bold;
   margin: 0;
-  padding: 27px 10px 34px 0;
+  padding: 27px 10px 30px 0;
   //@include transition(all 0.3s ease-out);
 }
 
 .addition-btn {
-  width: 240px;
-  height: 146px;
+  padding-left: 20px;
+  width: 145px;
+  height: 145px;
   margin: 0 auto;
 
   #add {
     text-indent: -1000000px;
-    background: rgba(243,236,223,0.9) url(../img/global/icon-add.png) no-repeat center 0;
-    @include image-2x("../img/global/icon-add_2x.png", 64px, 256px);
-    @include border-radius(2px);
+    background: rgba(243,236,223,0.9) url(../img/global/icon-add.png?a) no-repeat center center;
+    @include image-2x("../img/global/icon-add_2x.png?a", 64px, 72px);
+    @include border-radius(50%);
     display: block;
-    width: 240px;
-    height: 128px;
+    width: 145px;
+    height: 145px;
     @include transition(background-color 0.2s ease-in);
 
     &:active {
@@ -119,18 +130,20 @@ textarea {
 }
 
 .other-btns {
-  width: 240px;
-  height: 72px;
+  //padding-right: 20px;
+  width: 200px;
+  height: 130px;
   margin: 0 auto;
+  position: relative;
+  z-index: 1;
 
   #sub,
   #reset {
     text-indent: -1000000px;
-    background: rgba(159,77,4,0.7) no-repeat center 0;
+    background: rgba(159,77,4,0.7) no-repeat center center;
     display: block;
-    width: 120px;
-    height: 72px;
-    float: left;
+    position: absolute;
+    z-index: 1;
 
     &:active {
       background-color: rgba(159,77,4,0.4);
@@ -140,13 +153,21 @@ textarea {
   #sub {
     background-image: url(../img/global/icon-sub.png);
     @include image-2x("../img/global/icon-sub_2x.png", 54px, 72px);
-    @include border-radius(2px 0 0 2px);
+    @include border-radius(50%);
+    width: 120px;
+    height: 120px;
+    top: -7px;
+    left: -10px;
   }
 
   #reset {
     background-image: url(../img/global/icon-refresh.png);
     @include image-2x("../img/global/icon-refresh_2x.png", 68px, 72px);
-    @include border-radius(0 2px 2px 0);
+    @include border-radius(50%);
+    width: 95px;
+    height: 95px;
+    top: 40px;
+    left: 97px;
   }
 }
 
@@ -159,6 +180,18 @@ textarea {
   width: 210px;
   margin: 0 auto;
   padding-top: 18px;
+}
+
+.tipped {
+  background: $white url(../img/global/tipped.png) no-repeat center top;
+  @include image-2x("../img/global/tipped-retina-4in.png", 548px, 320px);
+  width: 548px;
+  height: 320px;
+  display: none;
+  position: absolute;
+  z-index: 10;
+  top: 0;
+  left: 0;
 }
 
 .install-copy {
@@ -363,9 +396,9 @@ textarea[contenteditable] {
 
 @media only screen and (max-device-width: 568px) and (orientation:landscape) {
 
-  body {
+  .tipped {
+    display: block;
     //-webkit-transform: rotate(90deg);
-    display: none;
   }
 
 }

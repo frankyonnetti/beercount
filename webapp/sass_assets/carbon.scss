@@ -1,23 +1,15 @@
 @import "base";
 
-// !---------------------------- /
-// !----- animation ------------ /
-// !---------------------------- /
 
-body.iphone-webapp {
-
-  #page {
-    width: 320px;
-    margin: 0 auto;
-    position: relative;
-    z-index: 1;
-    min-height: 548px;
-  }
-
-  #page-inner {
-    position: relative;
-    z-index: 100;
-  }
+.carb-contianer {
+  margin-left: -160px;
+  width: 320px;
+  height: 548px;
+  overflow: hidden;
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  z-index: 1;
 }
 
 .carb {
@@ -29,7 +21,32 @@ body.iphone-webapp {
   opacity: 0;
 }
 
-// ------------- /
+.carbdark {
+  background-color: rgba(159,77,4,0.4);
+  @include border-radius(50%);
+  display: block;
+  position: absolute;
+  z-index: 1;
+}
+
+.carbdark.item-1 {
+  width: 20px;
+  height: 20px;
+  top: 14px;
+  left: 120px;
+}
+
+.carbdark.item-2 {
+  width: 14px;
+  height: 14px;
+  top: 10px;
+  left: 140px;
+}
+
+
+// !---------------------------- /
+// !----- animation ------------ /
+// !---------------------------- /
 
 .carb.item-1 {
   width: 80px;

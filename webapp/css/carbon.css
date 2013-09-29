@@ -1,13 +1,12 @@
-body.iphone-webapp #page {
+.carb-contianer {
+  margin-left: -160px;
   width: 320px;
-  margin: 0 auto;
-  position: relative;
+  height: 548px;
+  overflow: hidden;
+  position: absolute;
+  top: 20px;
+  left: 50%;
   z-index: 1;
-  min-height: 548px;
-}
-body.iphone-webapp #page-inner {
-  position: relative;
-  z-index: 100;
 }
 
 .carb {
@@ -21,6 +20,32 @@ body.iphone-webapp #page-inner {
   bottom: -88px;
   z-index: 2;
   opacity: 0;
+}
+
+.carbdark {
+  background-color: rgba(159, 77, 4, 0.4);
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  border-radius: 50%;
+  display: block;
+  position: absolute;
+  z-index: 1;
+}
+
+.carbdark.item-1 {
+  width: 20px;
+  height: 20px;
+  top: 14px;
+  left: 120px;
+}
+
+.carbdark.item-2 {
+  width: 14px;
+  height: 14px;
+  top: 10px;
+  left: 140px;
 }
 
 .carb.item-1 {

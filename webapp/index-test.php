@@ -30,40 +30,17 @@
         <script>(function(a,b,c){if(c in b&&b[c]){var d,e=a.location,f=/^(a|html)$/i;a.addEventListener("click",function(a){d=a.target;while(!f.test(d.nodeName))d=d.parentNode;"href"in d&&(d.href.indexOf("http")||~d.href.indexOf(e.host))&&(a.preventDefault(),e.href=d.href)},!1)}})(document,window.navigator,"standalone")</script>
 
         <link rel="stylesheet" href="css/normalize.css">
-        <link rel="stylesheet" href="css/main.css?a">
-        <link rel="stylesheet" href="css/carbon.css?a">
+        <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="css/carbon.css">
         <script src="js/vendor/modernizr-2.6.2.min.js"></script>
     </head>
-    <?php
-      if (strpos(strtolower($_SERVER['HTTP_USER_AGENT']),"iphone")) {
-
-        if (strpos(strtolower($_SERVER['HTTP_USER_AGENT']),"safari")) {
-          echo('<body class="iphone-safari">');
-        } else {
-      	  echo('<body class="iphone-webapp">');
-        }
-
-      } else {
-        echo('<body class="other-browser">');
-      }
-    ?>
-
-        <div class="tipped">
-          OK you're done. Pick the phone back up.
-        </div>
+    <body class="iphone-webapp">
 
         <div id="page">
 
-        <?php if (strpos(strtolower($_SERVER['HTTP_USER_AGENT']),"iphone")): ?>
-
-          <?php if (strpos(strtolower($_SERVER['HTTP_USER_AGENT']),"safari")): ?>
-
-          <p class="install-copy">Before using Beer Count,<br>
-          add it to your "Home Screen"<br>
-          by tapping the share<br>
-          icon below.</p>
-
-          <?php else: ?>
+          <div class="tipped">
+            OK you're done. Pick the phone back up.
+          </div>
 
           <div id="page-inner">
 
@@ -104,21 +81,12 @@
           	<span class="carb item-17"></span>
           </div>
 
-          <?php endif; ?>
-
-        <?php else: ?>
-
-          <div class="logo">Beer Count</div>
-          <p class="website-intro">To use <strong>Beer Count</strong>, you'll need to open this page<br>using an iPhone or iPod touch.</p>
-
-        <?php endif; ?>
-
         </div><!-- /#page -->
 
         <script src="js/vendor/jquery-2.0.3.min.js"></script>
         <script src="js/helper.js"></script>
         <script src="js/main.js"></script>
-        <script src="js/plugins.js?c"></script>
+        <script src="js/plugins.js"></script>
 
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
         <script>
