@@ -34,13 +34,13 @@ body {
     #page {
       background: #c26a1c url(../img/global/suds.png) repeat-x center -30px;
       @include image-2x("../img/global/suds_2x.png", 640px, 170px);
-      // width: 568px;
-      @include bp(max480) {
-        // width: 480px;
-      }
+      overflow: hidden;
+      min-height: 568px;
       @include bp(max320) {
         background-position: center top;
-        // width: 320px;
+      }
+      @include bp(iphone4-port) {
+        background-position: center -30px;
       }
     }
   }
@@ -49,6 +49,15 @@ body {
     text-align: center;
     background: url(../img/global/install-webapp-bg.png) no-repeat center top;
     @include image-2x("../img/global/install-webapp-bg_2x.png", 320px, 385px);
+    @include bp(iphone4-port) {
+      background-position: center -5px;
+      background-size: 84% auto;
+
+      .install-copy {
+        line-height: 18px;
+        padding-top: 248px;
+      }
+    }
   }
 
   &.other-browser {
@@ -112,9 +121,12 @@ textarea {
   font-weight: bold;
   margin: 0;
   padding: 4px 10px 30px 0;
-  // @include transition(padding-top 0.3s ease-in);
+  @include transition(padding-top 0.7s ease-in-out);
   @include bp(max320) {
-    padding-top: 27px;
+    padding-top: 25px;
+  }
+  @include bp(iphone4-port) {
+    padding-top: 0;
   }
 }
 
@@ -131,16 +143,19 @@ textarea {
     margin-left: 100px;
     width: 145px;
     height: 145px;
-    @include transition(background-color 0.2s ease-in, margin 1s ease-in-out);
+    @include transition(background-color 0.2s ease-in, margin 1s ease-out);
     position: absolute;
-    top: -40px;
+    top: -45px;
     left: 0;
     z-index: 1;
     @include bp(max480) {
       margin-left: 37px;
     }
     @include bp(max320) {
-      margin: 40px 0 0 100px;
+      margin: 45px 0 0 100px;
+    }
+    @include bp(iphone4-port) {
+      margin-top: 34px;
     }
 
     &:active {
@@ -170,11 +185,11 @@ textarea {
     background-image: url(../img/global/icon-sub.png);
     @include image-2x("../img/global/icon-sub_2x.png", 54px, 72px);
     @include border-radius(50%);
-    margin-left: 318px;
+    margin-left: 308px;
     width: 120px;
     height: 120px;
-    @include transition(margin 1.2s ease-in);
-    top: -17px;
+    @include transition(margin 1.5s ease-out);
+    top: -22px;
     left: 0;
     @include bp(max480) {
       margin-left: 220px;
@@ -182,13 +197,16 @@ textarea {
     @include bp(max320) {
       margin: 165px 0 0 50px;
     }
+    @include bp(iphone4-port) {
+      margin-top: 144px;
+    }
   }
 
   #reset {
     background-image: url(../img/global/icon-refresh.png);
     @include image-2x("../img/global/icon-refresh_2x.png", 68px, 72px);
     @include border-radius(50%);
-    margin-left: 434px;
+    margin-left: 424px;
     width: 95px;
     height: 95px;
     @include transition(margin 1s ease-out);
@@ -200,39 +218,52 @@ textarea {
     @include bp(max320) {
       margin: 245px 0 0 170px;
     }
-  }
-
-  .carbdark.item-1 {
-    margin-left: 410px;
-    width: 20px;
-    height: 20px;
-    @include transition(margin 2s ease-out);
-    position: absolute;
-    top: -34px;
-    left: 0;
-    z-index: 1;
-    @include bp(max480) {
-      margin: 54px 0 0 210px;
-    }
-    @include bp(max320) {
-      margin: 217px 0 0 170px;
+    @include bp(iphone4-port) {
+      margin-top: 194px;
     }
   }
 
-  .carbdark.item-2 {
-    margin-left: 430px;
-    width: 14px;
-    height: 14px;
-    @include transition(margin 3s ease-out);
+  .carbdark {
+    background-color: rgba(159,77,4,0.4);
+    @include border-radius(50%);
+    display: block;
     position: absolute;
-    top: 0;
-    left: 0;
     z-index: 1;
-    @include bp(max480) {
-      margin: 70px 0 0 350px;
+
+    &.item-1 {
+      margin-left: 400px;
+      width: 20px;
+      height: 20px;
+      @include transition(margin 5s ease-out);
+      top: -44px;
+      left: 0;
+      @include bp(max480) {
+        margin: 64px 0 0 210px;
+      }
+      @include bp(max320) {
+        margin: 227px 0 0 170px;
+      }
+      @include bp(iphone4-port) {
+        margin-top: 197px;
+      }
     }
-    @include bp(max320) {
-      margin: 170px 0 0 210px;
+
+    &.item-2 {
+      margin-left: 420px;
+      width: 14px;
+      height: 14px;
+      @include transition(margin 7s ease-out);
+      top: -20px;
+      left: 0;
+      @include bp(max480) {
+        margin: 70px 0 0 350px;
+      }
+      @include bp(max320) {
+        margin: 170px 0 0 210px;
+      }
+      @include bp(iphone4-port) {
+        margin-top: 135px;
+      }
     }
   }
 }
@@ -254,6 +285,9 @@ textarea {
   @include bp(max320) {
     margin: 490px 0 0 -105px;
     width: 210px;
+  }
+  @include bp(iphone4-port) {
+    margin-top: 410px;
   }
 }
 
@@ -407,58 +441,7 @@ textarea[contenteditable] {
 // Media Queries
 // ===================================================================
 
-@media only screen and (min-width: 800px) {
-  // Style adjustments for viewports that meet the condition */
-}
-
 @media only screen and (-webkit-min-device-pixel-ratio: 1.5),
        only screen and (min-resolution: 144dpi) {
   // Style adjustments for viewports that meet the condition */
-}
-
-//iPhone 5
-@media only screen and (max-device-height: 568px) and (orientation:portrait) {
-
-  // body.iphone-webapp {
-  //   background-position: center top;
-  //   width: 320px;
-  // }
-  //
-  // #beerCount {
-  //   padding-top: 27px;
-  //   padding-bottom: 57px;
-  // }
-
-}
-
-//iPhone 4
-@media only screen and (max-device-height: 480px) and (orientation:portrait) {
-
-  // body.iphone-webapp {
-  //   background-position: center -25px;
-  // }
-  //
-  // body.iphone-safari {
-  //   background-position: center -5px;
-  //   background-size: 84% auto;
-  //
-  //   .install-copy {
-  //     line-height: 18px;
-  //     padding-top: 248px;
-  //   }
-  // }
-  //
-  // #beerCount {
-  //   padding-top: 6px;
-  //   padding-bottom: 34px;
-  // }
-
-}
-
-@media only screen and (max-device-width: 568px) and (orientation:landscape) {
-
-  .tipped {
-    //-webkit-transform: rotate(90deg);
-  }
-
 }

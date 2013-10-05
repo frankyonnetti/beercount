@@ -80,7 +80,7 @@
 
           </div><!-- /#page-inner -->
 
-          <div class="carb-contianer">
+          <div id="carbs">
           	<span class="carb item-1"></span>
           	<span class="carb item-2"></span>
           	<span class="carb item-3"></span>
@@ -98,6 +98,21 @@
           	<span class="carb item-15"></span>
           	<span class="carb item-16"></span>
           	<span class="carb item-17"></span>
+          	<span class="carb item-18"></span>
+          	<span class="carb item-19"></span>
+          	<span class="carb item-20"></span>
+          	<span class="carb item-21"></span>
+          	<span class="carb item-22"></span>
+          	<span class="carb item-23"></span>
+          	<span class="carb item-24"></span>
+          	<span class="carb item-25"></span>
+          	<span class="carb item-26"></span>
+          	<span class="carb item-27"></span>
+          	<span class="carb item-28"></span>
+          	<span class="carb item-29"></span>
+          	<span class="carb item-30"></span>
+          	<span class="carb item-31"></span>
+          	<span class="carb item-32"></span>
           </div>
 
           <?php endif; ?>

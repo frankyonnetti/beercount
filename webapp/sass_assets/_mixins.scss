@@ -98,6 +98,28 @@
   @else if $point == iOS {
     @media only screen and (orientation:landscape) and (orientation:portrait) { @content; }
   }
+  @else if $point == iOS-port {
+    @media only screen and (orientation:portrait) { @content; }
+  }
+  @else if $point == iOS-landscape {
+    @media only screen and (orientation:landscape) { @content; }
+  }
+  //iPhone 4 portrait
+  @else if $point == iphone4-port {
+    @media only screen and (max-device-height: 480px) and (orientation:portrait) { @content; }
+  }
+  //iPhone 4 landscape
+  @else if $point == iphone4-landscape {
+    @media only screen and (max-device-width: 480px) and (orientation:landscape) { @content; }
+  }
+  //iPhone 5 portrait
+  @else if $point == iphone5-port {
+    @media only screen and (max-device-height: 568px) and (orientation:portrait) { @content; }
+  }
+  //iPhone 5 landscape
+  @else if $point == iphone5-landscape {
+    @media only screen and (max-device-width: 568px) and (orientation:landscape) { @content; }
+  }
 }
 
 // Easy retina-ready images
@@ -113,4 +135,35 @@
     background-image: url($image);
     background-size: $width $height;
   }
+}
+
+//animation
+@mixin animation($name, $duration, $timing, $count, $delay) {
+  -webkit-animation-name: $name;
+     -moz-animation-name: $name;
+      -ms-animation-name: $name;
+          animation-name: $name;
+  -webkit-animation-duration: $duration;
+     -moz-animation-duration: $duration;
+      -ms-animation-duration: $duration;
+          animation-duration: $duration;
+  -webkit-animation-timing-function: $timing;
+     -moz-animation-timing-function: $timing;
+      -ms-animation-timing-function: $timing;
+          animation-timing-function: $timing;
+  -webkit-animation-iteration-count: $count;
+     -moz-animation-iteration-count: $count;
+      -ms-animation-iteration-count: $count;
+          animation-iteration-count: $count;
+  -webkit-animation-delay: $delay;
+     -moz-animation-delay: $delay;
+      -ms-animation-delay: $delay;
+          animation-delay: $delay;
+}
+
+@mixin keyframes($name) {
+  @-webkit-keyframes $name { @content; }
+     @-moz-keyframes $name { @content; }
+      @-ms-keyframes $name { @content; }
+          @keyframes $name { @content; }
 }
