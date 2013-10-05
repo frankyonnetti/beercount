@@ -38,10 +38,6 @@
 
         <div id="page">
 
-          <div class="tipped">
-            OK you're done. Pick the phone back up.
-          </div>
-
           <div id="page-inner">
 
             <div id="beerCount"></div>

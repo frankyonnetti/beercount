@@ -7,7 +7,7 @@
         <meta name="description" content="">
         <meta name="MobileOptimized" content="width">
         <meta name="HandheldFriendly" content="true">
-        <meta name="viewport" content="initial-scale=1.0,width=device-width,user-scalable=yes">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
         <meta http-equiv="cleartype" content="on">
 
         <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
@@ -30,7 +30,7 @@
         <script>(function(a,b,c){if(c in b&&b[c]){var d,e=a.location,f=/^(a|html)$/i;a.addEventListener("click",function(a){d=a.target;while(!f.test(d.nodeName))d=d.parentNode;"href"in d&&(d.href.indexOf("http")||~d.href.indexOf(e.host))&&(a.preventDefault(),e.href=d.href)},!1)}})(document,window.navigator,"standalone")</script>
 
         <link rel="stylesheet" href="css/normalize.css">
-        <link rel="stylesheet" href="css/main.css?a">
+        <link rel="stylesheet" href="css/main.css?c">
         <link rel="stylesheet" href="css/carbon.css?a">
         <script src="js/vendor/modernizr-2.6.2.min.js"></script>
     </head>
@@ -47,10 +47,6 @@
         echo('<body class="other-browser">');
       }
     ?>
-
-        <div class="tipped">
-          OK you're done. Pick the phone back up.
-        </div>
 
         <div id="page">
 

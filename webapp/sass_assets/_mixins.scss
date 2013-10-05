@@ -61,6 +61,45 @@
 	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='$from', endColorstr='$to', GradientType=1); // IE9 and down
 }
 
+// include Media Queries
+// http://css-tricks.com/naming-media-queries
+// scss - @include breakpoint(max767) { width: 100%; }
+@mixin bp($point) {
+  //max-width
+  @if $point == max991 {
+    @media (max-width: 991px)  { @content; }
+  }
+  @else if $point == max880 {
+    @media (max-width: 880px) { @content; }
+  }
+  @else if $point == max768 {
+    @media (max-width: 768px)  { @content; }
+  }
+  @else if $point == max600 {
+    @media (max-width: 600px)  { @content; }
+  }
+  @else if $point == max480 {
+    @media (max-width: 480px)  { @content; }
+  }
+  @else if $point == max320 {
+    @media (max-width: 320px)  { @content; }
+  }
+  //min-width
+  @else if $point == min769 {
+    @media (min-width: 769px)  { @content; }
+  }
+  @else if $point == min481 {
+    @media (min-width: 481px)  { @content; }
+  }
+  @else if $point == min321 {
+    @media (min-width: 321px)  { @content; }
+  }
+  //iOS
+  @else if $point == iOS {
+    @media only screen and (orientation:landscape) and (orientation:portrait) { @content; }
+  }
+}
+
 // Easy retina-ready images
 // http://37signals.com/svn/posts/3271-easy-retina-ready-images-using-scss
 @mixin image-2x($image, $width, $height) {
