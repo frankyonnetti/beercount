@@ -5,8 +5,8 @@
         <meta charset="utf-8">
         <title>Beer Count</title>
         <meta name="description" content="">
-        <meta name="HandheldFriendly" content="True">
-        <meta name="MobileOptimized" content="320">
+        <meta name="MobileOptimized" content="width">
+        <meta name="HandheldFriendly" content="true">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
         <meta http-equiv="cleartype" content="on">
 
@@ -23,7 +23,7 @@
 
         <!-- For iOS web apps -->
         <meta name="apple-mobile-web-app-capable" content="yes">
-        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
         <meta name="apple-mobile-web-app-title" content="Beer Count">
 
         <!-- This script prevents links from opening in Mobile Safari. https://gist.github.com/1042026 -->
@@ -31,7 +31,7 @@
 
         <link rel="stylesheet" href="css/normalize.css">
         <link rel="stylesheet" href="css/main.css?a">
-        <link rel="stylesheet" href="css/carbon.css">
+        <link rel="stylesheet" href="css/carbon.css?a">
         <script src="js/vendor/modernizr-2.6.2.min.js"></script>
     </head>
     <?php
@@ -57,7 +57,7 @@
           <p class="install-copy">Before using Beer Count,<br>
           add it to your "Home Screen"<br>
           by tapping the share<br>
-          icon <span class="action-icon">action-icon</span> below.</p>
+          icon below.</p>
 
           <?php else: ?>
 
@@ -70,6 +70,8 @@
             </div>
 
             <div class="other-btns">
+              <span class="carbdark item-1"></span>
+              <span class="carbdark item-2"></span>
             	<span id="sub" class="pressed" href="#subtract">Subtract</span>
             	<span id="reset" class="pressed" href="#reset">Reset</span>
           	</div>
@@ -78,23 +80,40 @@
 
           </div><!-- /#page-inner -->
 
-        	<span class="carb item-1"></span>
-        	<span class="carb item-2"></span>
-        	<span class="carb item-3"></span>
-        	<span class="carb item-4"></span>
-        	<span class="carb item-5"></span>
-        	<span class="carb item-6"></span>
-        	<span class="carb item-7"></span>
-        	<span class="carb item-8"></span>
-        	<span class="carb item-9"></span>
-        	<span class="carb item-10"></span>
-        	<span class="carb item-11"></span>
-        	<span class="carb item-12"></span>
-        	<span class="carb item-13"></span>
-        	<span class="carb item-14"></span>
-        	<span class="carb item-15"></span>
-        	<span class="carb item-16"></span>
-        	<span class="carb item-17"></span>
+          <span id="carbs">
+          	<span class="carb item-1"></span>
+          	<span class="carb item-2"></span>
+          	<span class="carb item-3"></span>
+          	<span class="carb item-4"></span>
+          	<span class="carb item-5"></span>
+          	<span class="carb item-6"></span>
+          	<span class="carb item-7"></span>
+          	<span class="carb item-8"></span>
+          	<span class="carb item-9"></span>
+          	<span class="carb item-10"></span>
+          	<span class="carb item-11"></span>
+          	<span class="carb item-12"></span>
+          	<span class="carb item-13"></span>
+          	<span class="carb item-14"></span>
+          	<span class="carb item-15"></span>
+          	<span class="carb item-16"></span>
+          	<span class="carb item-17"></span>
+          	<span class="carb item-18"></span>
+          	<span class="carb item-19"></span>
+          	<span class="carb item-20"></span>
+          	<span class="carb item-21"></span>
+          	<span class="carb item-22"></span>
+          	<span class="carb item-23"></span>
+          	<span class="carb item-24"></span>
+          	<span class="carb item-25"></span>
+          	<span class="carb item-26"></span>
+          	<span class="carb item-27"></span>
+          	<span class="carb item-28"></span>
+          	<span class="carb item-29"></span>
+          	<span class="carb item-30"></span>
+          	<span class="carb item-31"></span>
+          	<span class="carb item-32"></span>
+          </span>
 
           <?php endif; ?>
 
@@ -107,10 +126,10 @@
 
         </div><!-- /#page -->
 
-        <script src="js/vendor/jquery-2.0.0.min.js"></script>
+        <script src="js/vendor/jquery-2.0.3.min.js"></script>
         <script src="js/helper.js"></script>
         <script src="js/main.js"></script>
-        <script src="js/plugins.js"></script>
+        <script src="js/plugins.js?a"></script>
 
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
         <script>

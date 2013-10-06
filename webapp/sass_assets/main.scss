@@ -1,16 +1,16 @@
 @import "base";
 
-/*
- * HTML5 Boilerplate
- *
- * What follows is the result of much research on cross-browser styling.
- * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
- * Kroc Camen, and the H5BP dev community and team.
- */
+// *
+// * HTML5 Boilerplate
+// *
+// * What follows is the result of much research on cross-browser styling.
+// * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
+// * Kroc Camen, and the H5BP dev community and team.
+// *
 
-/* ==========================================================================
-   Base styles: opinionated defaults
-   ========================================================================== */
+// * ==========================================================================
+// * Base styles: opinionated defaults
+// * ==========================================================================
 
 html,
 button,
@@ -28,14 +28,36 @@ body {
   background-color: #c26a1c;
 
   &.iphone-webapp {
-    background: url(../img/global/suds.png) repeat-x center top;
-    @include image-2x("../img/global/suds_2x.png", 640px, 170px);
+    background-color: #cdc0a8;
+    padding-top: 20px;
+
+    #page {
+      background: #c26a1c url(../img/global/suds.png) repeat-x center -30px;
+      @include image-2x("../img/global/suds_2x.png", 640px, 170px);
+      overflow: hidden;
+      min-height: 568px;
+      @include bp(max320) {
+        background-position: center top;
+      }
+      @include bp(iphone4-port) {
+        background-position: center -30px;
+      }
+    }
   }
 
   &.iphone-safari {
     text-align: center;
     background: url(../img/global/install-webapp-bg.png) no-repeat center top;
     @include image-2x("../img/global/install-webapp-bg_2x.png", 320px, 385px);
+    @include bp(iphone4-port) {
+      background-position: center -5px;
+      background-size: 84% auto;
+
+      .install-copy {
+        line-height: 18px;
+        padding-top: 248px;
+      }
+    }
   }
 
   &.other-browser {
@@ -57,17 +79,17 @@ a:hover {
   color: #06e;
 }
 
-/*
- * Remove the gap between images and the bottom of their containers: h5bp.com/i/440
- */
+// *
+// * Remove the gap between images and the bottom of their containers: h5bp.com/i/440
+// *
 
 img {
   vertical-align: middle;
 }
 
-/*
- * Remove default fieldset styles.
- */
+// *
+// * Remove default fieldset styles.
+// *
 
 fieldset {
   border: 0;
@@ -75,17 +97,22 @@ fieldset {
   padding: 0;
 }
 
-/*
- * Allow only vertical resizing of textareas.
- */
+// *
+// * Allow only vertical resizing of textareas.
+// *
 
 textarea {
   resize: vertical;
 }
 
-/* ==========================================================================
-   Author's custom styles
-   ========================================================================== */
+// * ==========================================================================
+// * Author's custom styles
+// * ==========================================================================
+
+#page-inner {
+  position: relative;
+  z-index: 2;
+}
 
 #beerCount {
   font-size: 124px;
@@ -93,24 +120,43 @@ textarea {
   letter-spacing: -10px;
   font-weight: bold;
   margin: 0;
-  padding: 27px 10px 34px 0;
-  //@include transition(all 0.3s ease-out);
+  padding: 4px 10px 30px 0;
+  @include transition(padding-top 0.7s ease-in-out);
+  @include bp(max320) {
+    padding-top: 25px;
+  }
+  @include bp(iphone4-port) {
+    padding-top: 0;
+  }
 }
 
 .addition-btn {
-  width: 240px;
-  height: 146px;
-  margin: 0 auto;
+  position: relative;
+  z-index: 1;
 
   #add {
     text-indent: -1000000px;
-    background: rgba(243,236,223,0.9) url(../img/global/icon-add.png) no-repeat center 0;
-    @include image-2x("../img/global/icon-add_2x.png", 64px, 256px);
-    @include border-radius(2px);
+    background: rgba(243,236,223,0.9) url(../img/global/icon-add.png?a) no-repeat center center;
+    @include image-2x("../img/global/icon-add_2x.png?a", 64px, 72px);
+    @include border-radius(50%);
     display: block;
-    width: 240px;
-    height: 128px;
-    @include transition(background-color 0.2s ease-in);
+    margin-left: 100px;
+    width: 145px;
+    height: 145px;
+    @include transition(background-color 0.2s ease-in, margin 1s ease-out);
+    position: absolute;
+    top: -45px;
+    left: 0;
+    z-index: 1;
+    @include bp(max480) {
+      margin-left: 37px;
+    }
+    @include bp(max320) {
+      margin: 45px 0 0 100px;
+    }
+    @include bp(iphone4-port) {
+      margin-top: 34px;
+    }
 
     &:active {
       background-color: rgba(243,236,223,0.5);
@@ -119,18 +165,16 @@ textarea {
 }
 
 .other-btns {
-  width: 240px;
-  height: 72px;
-  margin: 0 auto;
+  position: relative;
+  z-index: 1;
 
   #sub,
   #reset {
     text-indent: -1000000px;
-    background: rgba(159,77,4,0.7) no-repeat center 0;
+    background: rgba(159,77,4,0.7) no-repeat center center;
     display: block;
-    width: 120px;
-    height: 72px;
-    float: left;
+    position: absolute;
+    z-index: 2;
 
     &:active {
       background-color: rgba(159,77,4,0.4);
@@ -140,13 +184,87 @@ textarea {
   #sub {
     background-image: url(../img/global/icon-sub.png);
     @include image-2x("../img/global/icon-sub_2x.png", 54px, 72px);
-    @include border-radius(2px 0 0 2px);
+    @include border-radius(50%);
+    margin-left: 308px;
+    width: 120px;
+    height: 120px;
+    @include transition(margin 1.5s ease-out);
+    top: -22px;
+    left: 0;
+    @include bp(max480) {
+      margin-left: 220px;
+    }
+    @include bp(max320) {
+      margin: 165px 0 0 50px;
+    }
+    @include bp(iphone4-port) {
+      margin-top: 144px;
+    }
   }
 
   #reset {
     background-image: url(../img/global/icon-refresh.png);
     @include image-2x("../img/global/icon-refresh_2x.png", 68px, 72px);
-    @include border-radius(0 2px 2px 0);
+    @include border-radius(50%);
+    margin-left: 424px;
+    width: 95px;
+    height: 95px;
+    @include transition(margin 1s ease-out);
+    top: -40px;
+    left: 0;
+    @include bp(max480) {
+      margin-left: 334px;
+    }
+    @include bp(max320) {
+      margin: 245px 0 0 170px;
+    }
+    @include bp(iphone4-port) {
+      margin-top: 194px;
+    }
+  }
+
+  .carbdark {
+    background-color: rgba(159,77,4,0.4);
+    @include border-radius(50%);
+    display: block;
+    position: absolute;
+    z-index: 1;
+
+    &.item-1 {
+      margin-left: 400px;
+      width: 20px;
+      height: 20px;
+      @include transition(margin 5s ease-out);
+      top: -44px;
+      left: 0;
+      @include bp(max480) {
+        margin: 64px 0 0 210px;
+      }
+      @include bp(max320) {
+        margin: 227px 0 0 170px;
+      }
+      @include bp(iphone4-port) {
+        margin-top: 197px;
+      }
+    }
+
+    &.item-2 {
+      margin-left: 420px;
+      width: 14px;
+      height: 14px;
+      @include transition(margin 7s ease-out);
+      top: -20px;
+      left: 0;
+      @include bp(max480) {
+        margin: 70px 0 0 350px;
+      }
+      @include bp(max320) {
+        margin: 170px 0 0 210px;
+      }
+      @include bp(iphone4-port) {
+        margin-top: 135px;
+      }
+    }
   }
 }
 
@@ -156,9 +274,21 @@ textarea {
   font-size: 17px;
   line-height: 20px;
   text-shadow: 0 -1px 0 rgba(0,0,0,0.17);
-  width: 210px;
-  margin: 0 auto;
-  padding-top: 18px;
+  margin-top: 260px;
+  margin-left: -210px;
+  width: 420px;
+  @include transition(margin 0.3s ease-out, width 0.3s ease-out);
+  position: absolute;
+  top: 0;
+  left: 50%;
+  z-index: 1;
+  @include bp(max320) {
+    margin: 490px 0 0 -105px;
+    width: 210px;
+  }
+  @include bp(iphone4-port) {
+    margin-top: 410px;
+  }
 }
 
 .install-copy {
@@ -198,11 +328,11 @@ textarea {
 }
 
 
-/* ==========================================================================
-   Helper classes
-   ========================================================================== */
+// * ==========================================================================
+// * Helper classes
+// * ==========================================================================
 
-/* Prevent callout */
+// Prevent callout
 
 .nocallout {
   -webkit-touch-callout: none;
@@ -212,23 +342,23 @@ textarea {
   background-color: rgba(0, 0, 0, 0.7);
 }
 
-/* A hack for HTML5 contenteditable attribute on mobile */
+// A hack for HTML5 contenteditable attribute on mobile
 
 textarea[contenteditable] {
   -webkit-appearance: none;
 }
 
-/* A workaround for S60 3.x and 5.0 devices which do not animated gif images if
-   they have been set as display: none */
+// A workaround for S60 3.x and 5.0 devices which do not animated gif images if
+// they have been set as display: none
 
 .gifhidden {
   position: absolute;
   left: -100%;
 }
 
-/*
- * Image replacement
- */
+// *
+// * Image replacement
+// *
 
 .ir {
   background-color: transparent;
@@ -245,18 +375,18 @@ textarea[contenteditable] {
   display: none;
 }
 
-/*
- * Hide from both screenreaders and browsers: h5bp.com/u
- */
+// *
+// * Hide from both screenreaders and browsers: h5bp.com/u
+// *
 
 .hidden {
   display: none !important;
   visibility: hidden;
 }
 
-/*
- * Hide only visually, but have it available for screenreaders: h5bp.com/v
- */
+// *
+// * Hide only visually, but have it available for screenreaders: h5bp.com/v
+// *
 
 .visuallyhidden {
   border: 0;
@@ -269,10 +399,10 @@ textarea[contenteditable] {
   width: 1px;
 }
 
-/*
- * Extends the .visuallyhidden class to allow the element to be focusable
- * when navigated to via the keyboard: h5bp.com/p
- */
+// *
+// * Extends the .visuallyhidden class to allow the element to be focusable
+// * when navigated to via the keyboard: h5bp.com/p
+// *
 
 .visuallyhidden.focusable:active,
 .visuallyhidden.focusable:focus {
@@ -284,18 +414,18 @@ textarea[contenteditable] {
   width: auto;
 }
 
-/*
- * Hide visually and from screenreaders, but maintain layout
- */
+// *
+// * Hide visually and from screenreaders, but maintain layout
+// *
 
 .invisible {
   visibility: hidden;
 }
 
-/**
- * Clearfix helper
- * Used to contain floats: h5bp.com/q
- */
+// *
+// * Clearfix helper
+// * Used to contain floats: h5bp.com/q
+// *
 
 .clearfix:before,
 .clearfix:after {
@@ -307,64 +437,11 @@ textarea[contenteditable] {
   clear: both;
 }
 
-/* ==========================================================================
-   EXAMPLE Media Queries for Responsive Design.
-   Theses examples override the primary ('mobile first') styles.
-   Modify as content requires.
-   ========================================================================== */
 
-@media only screen and (min-width: 800px) {
-  /* Style adjustments for viewports that meet the condition */
-}
+// Media Queries
+// ===================================================================
 
 @media only screen and (-webkit-min-device-pixel-ratio: 1.5),
        only screen and (min-resolution: 144dpi) {
-  /* Style adjustments for viewports that meet the condition */
-}
-
-//iPhone 5
-@media only screen and (max-device-height: 568px) and (orientation:portrait) {
-
-  body.iphone-webapp {
-    background-position: center top;
-  }
-
-  #beerCount {
-    padding-top: 27px;
-    padding-bottom: 57px;
-  }
-
-}
-
-//iPhone 4
-@media only screen and (max-device-height: 480px) and (orientation:portrait) {
-
-  body.iphone-webapp {
-    background-position: center -25px;
-  }
-
-  body.iphone-safari {
-    background-position: center -5px;
-    background-size: 84% auto;
-
-    .install-copy {
-      line-height: 18px;
-      padding-top: 248px;
-    }
-  }
-
-  #beerCount {
-    padding-top: 6px;
-    padding-bottom: 34px;
-  }
-
-}
-
-@media only screen and (max-device-width: 568px) and (orientation:landscape) {
-
-  body {
-    //-webkit-transform: rotate(90deg);
-    display: none;
-  }
-
+  // Style adjustments for viewports that meet the condition */
 }
