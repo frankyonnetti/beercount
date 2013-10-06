@@ -30,7 +30,7 @@
         <script>(function(a,b,c){if(c in b&&b[c]){var d,e=a.location,f=/^(a|html)$/i;a.addEventListener("click",function(a){d=a.target;while(!f.test(d.nodeName))d=d.parentNode;"href"in d&&(d.href.indexOf("http")||~d.href.indexOf(e.host))&&(a.preventDefault(),e.href=d.href)},!1)}})(document,window.navigator,"standalone")</script>
 
         <link rel="stylesheet" href="css/normalize.css">
-        <link rel="stylesheet" href="css/main.css?c">
+        <link rel="stylesheet" href="css/main.css?a">
         <link rel="stylesheet" href="css/carbon.css?a">
         <script src="js/vendor/modernizr-2.6.2.min.js"></script>
     </head>
@@ -80,7 +80,7 @@
 
           </div><!-- /#page-inner -->
 
-          <div id="carbs">
+          <span id="carbs">
           	<span class="carb item-1"></span>
           	<span class="carb item-2"></span>
           	<span class="carb item-3"></span>
@@ -113,7 +113,7 @@
           	<span class="carb item-30"></span>
           	<span class="carb item-31"></span>
           	<span class="carb item-32"></span>
-          </div>
+          </span>
 
           <?php endif; ?>
 
@@ -129,7 +129,7 @@
         <script src="js/vendor/jquery-2.0.3.min.js"></script>
         <script src="js/helper.js"></script>
         <script src="js/main.js"></script>
-        <script src="js/plugins.js?c"></script>
+        <script src="js/plugins.js?a"></script>
 
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
         <script>

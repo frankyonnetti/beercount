@@ -1,19 +1,5 @@
 @import "base";
 
-.carbs {
-//  overflow: hidden;
-//  min-height: 568px;
-//  @include bp(max320) {
-//    width: 320px;
-//  }
-//  @include bp(iphone4-landscape) {
-//    width: 480px;
-//  }
-//  @include bp(iphone5-landscape) {
-//    width: 568px;
-//  }
-}
-
 .carb {
   background-color: #fff;
   @include border-radius(50%);
