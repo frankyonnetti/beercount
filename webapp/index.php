@@ -3,7 +3,7 @@
 <!--[if (gt IEMobile 7)|!(IEMobile)]><!--> <html class="no-js"> <!--<![endif]-->
     <head>
         <meta charset="utf-8">
-        <title>Beer Count</title>
+        <title>Beer Count 2</title>
         <meta name="description" content="">
         <meta name="MobileOptimized" content="width">
         <meta name="HandheldFriendly" content="true">
@@ -115,6 +115,11 @@
           	<span class="carb item-32"></span>
           </span>
 
+          <script src="js/vendor/jquery-2.0.3.min.js"></script>
+          <script src="js/helper.js"></script>
+          <script src="js/main.js"></script>
+          <script src="js/plugins.js?a"></script>
+
           <?php endif; ?>
 
         <?php else: ?>
@@ -125,11 +130,6 @@
         <?php endif; ?>
 
         </div><!-- /#page -->
-
-        <script src="js/vendor/jquery-2.0.3.min.js"></script>
-        <script src="js/helper.js"></script>
-        <script src="js/main.js"></script>
-        <script src="js/plugins.js?a"></script>
 
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
         <script>
